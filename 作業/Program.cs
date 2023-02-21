@@ -12,12 +12,9 @@ namespace 作業
         {
             
             Console.WriteLine("輸入一串數字由逗號間隔");
-            string user=Console.ReadLine();
-            List<int> list= new List<int>();
-            var ints = user.Split(',').Select(int.Parse).ToList().OrderByDescending(x=>x);
-            string afterOrder="";
-            foreach (int i in ints) { afterOrder += (i + ","); }
-            Console.WriteLine(afterOrder.TrimEnd(','));
+            Console.WriteLine(string.Join(",", Console.ReadLine().Split(',').Reverse()));
+            
+
         }
     }
 }
