@@ -13,9 +13,8 @@ namespace _2
             Console.WriteLine("輸入由逗號隔開的數列");
             string numString = Console.ReadLine();
             
-
-            IOrderedEnumerable<int> list_odd = numString.Split(',').Select(x => Convert.ToInt32(x)).Where(x => x % 2 != 0).ToList().OrderBy(x => x);
-            IOrderedEnumerable<int> list_even = numString.Split(',').Select(x => Convert.ToInt32(x)).Where(x => x % 2 == 0).ToList().OrderBy(x => x);
+            IOrderedEnumerable<int> list_odd =  numString.Split(',').Where(x => Convert.ToInt32(x) % 2 != 0).Select(int.Parse).ToList().OrderBy(x=>x);
+            IOrderedEnumerable<int> list_even = numString.Split(',').Where(x => Convert.ToInt32(x) % 2 == 0).Select(int.Parse).ToList().OrderBy(x=>x);
             string odd = "", even = "";
 
             Console.WriteLine("奇數:");
